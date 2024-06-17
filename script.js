@@ -1,6 +1,8 @@
-const originalAlert = window.alert;
-const originalPrompt = window.prompt;
-const originalConfirm = window.confirm;
+const [originalAlert, originalPrompt, originalConfirm] = [
+  window.alert,
+  window.prompt,
+  window.confirm,
+];
 
 window.alert = function () {
   return originalConfirm.apply(this, arguments); // Use confirm instead of alert
